@@ -39,7 +39,7 @@ const App = () =>{
       <h1><img src={LogoAsset} alt="Logo" width='50' />YT Thumbnail Previewer</h1>
 
         <label>
-          <span>Youtube動画URLを入力してthumbnail画像を確認する</span>
+          <span>Youtube動画URLまたはYoutube動画idを入力してthumbnail画像を確認する</span>
           <input type="text" placeholder='Youtube videoのURLを入力してください' onInput={onInput}/>
         </label>
 
