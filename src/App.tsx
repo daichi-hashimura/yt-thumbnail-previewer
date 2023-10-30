@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react'
+import LogoAsset from '../public/thumbnail-preview.svg'
 import './App.css'
 
 const THUMBNAIL_IMAGE_TYPES = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', 'default'] as const;
@@ -30,10 +31,12 @@ const App = () =>{
    
   }
 
+  // const hasWrong
+
 
   return (
     <>
-      <h1><img src="/thumbnail-preview.svg" alt="Logo" width='50' />YT Thumnail Previewer</h1>
+      <h1><img src={LogoAsset} alt="Logo" width='50' />YT Thumbnail Previewer</h1>
 
         <label>
           <span>Youtube動画URLを入力してthumbnail画像を確認する</span>
