@@ -31,7 +31,6 @@ const App = () =>{
    
   }
 
-  // const hasWrong
 
 
   return (
@@ -49,8 +48,23 @@ const App = () =>{
               <p>
                 <span style={{fontWeight:'bold'}}>Youtube Video ID:</span>  {videoId}
               </p>
-              <small>※ 画像が表示されない場合はvideoIdに誤りがあるか、解像度の高い画像がYoutubeにアップロードされていない可能性がありますため、Youtubeを確認してください</small>
-              <ul>
+
+              <section>
+                <h2>画像が表示されない場合:</h2>
+                <ul className='noticeList'>
+                  <li>
+                    <small>※ 入力されたYoutube動画URLまたはYoutube動画IDに誤りがある</small>
+                  </li>
+                  <li>
+                    <small>※ 解像度の高い画像がYoutubeにアップロードされていない可能性がありますため、Youtubeを確認してください</small>
+                  </li>
+                  <li>
+                    <small>※ Youtube動画のVisibilityがPrivateとして設定されている</small>
+                  </li>
+                </ul>
+              </section>
+
+              <ul className='imageList'>
                 {
                   THUMBNAIL_IMAGE_TYPES.map((imageType, i) => (
                     <li key={`${imageType}-${i}`} className='imageItem'>
