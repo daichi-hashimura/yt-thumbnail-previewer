@@ -15,7 +15,13 @@ export const useModal = () => {
     ({ modalContent }: Options) => {
       return (
         <>
-          <ReactModal isOpen={showModal} className={styles.modal}>
+          <ReactModal
+            isOpen={showModal}
+            className={styles.modal}
+            bodyOpenClassName={styles.modalParentBody}
+            onRequestClose={toggleModal}
+            shouldCloseOnOverlayClick
+          >
             <div className={styles.modalContent}>
               <button
                 onClick={toggleModal}

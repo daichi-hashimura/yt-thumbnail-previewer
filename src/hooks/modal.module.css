@@ -1,3 +1,7 @@
+.modalParentBody {
+  overflow: hidden;
+}
+
 .modal {
   display: grid;
   place-items: center;
@@ -7,7 +11,13 @@
 
 .modalContent {
   position: relative;
-  width: 70%;
+  width: 100%;
+}
+
+@media screen and (min-width: 960px) {
+  .modalContent {
+    width: 70%;
+  }
 }
 .modalContent::before {
   display: block;
