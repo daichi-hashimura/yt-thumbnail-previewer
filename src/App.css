@@ -114,19 +114,21 @@ input {
   border: 1px solid #eee;
   border-radius: 10px;
   padding: 10px 30px;
-  transition: opacity 0.25s;
+  transition: backgorund-color 0.25s;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .buttonWrapper button:hover {
-  opacity: 0.6;
+  background-color: #ba121f;
+  color: #fff;
 }
 
 .copyValue {
   width: calc(100% - 60px);
   margin: 10px auto 0;
   padding: 10px 30px;
-  border: 1px solid #eee;
+  border: 1px solid #ba121f;
   border-radius: 10px;
   animation: show 0.25s;
   transition: opacity 0.25s, transform 0.25s;

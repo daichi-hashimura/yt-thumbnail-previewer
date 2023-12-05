@@ -136,6 +136,7 @@ const App = () => {
             </ul>
           </section>
 
+          <h2>Youtube Thumbnail画像</h2>
           <ul className="imageList">
             {THUMBNAIL_IMAGE_TYPES.map((imageType, i) => (
               <li key={`${imageType}-${i}`} className="imageItem">
