@@ -38,7 +38,7 @@ section h2 {
 }
 
 .imageItem:hover {
-  box-shadow: 5px 6px 5px 0px rgba(148,137,137,0.75);
+  box-shadow: 5px 6px 5px 0px rgba(148, 137, 137, 0.75);
 }
 
 .imageItem img {
@@ -62,7 +62,7 @@ label {
   max-width: 500px;
 }
 
-label span { 
+label span {
   display: block;
 }
 
@@ -84,7 +84,7 @@ input {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .imageItem  {
+  .imageItem {
     padding: 0;
   }
 
@@ -97,4 +97,54 @@ input {
   }
 }
 
+:fullscreen {
+  background-color: #eee;
+}
 
+:fullscreen img {
+  width: 80% !important;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.buttonWrapper button {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px 30px;
+  transition: opacity 0.25s;
+  cursor: pointer;
+}
+
+.buttonWrapper button:hover {
+  opacity: 0.6;
+}
+
+.copyValue {
+  width: calc(100% - 60px);
+  margin: 10px auto 0;
+  padding: 10px 30px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  animation: show 0.25s;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+@media screen and (min-width: 960px) {
+  .copyValue {
+    width: 30%;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

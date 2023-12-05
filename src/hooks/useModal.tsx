@@ -5,6 +5,7 @@ import styles from "./modal.module.css"
 type Options = { modalContent: ReactNode }
 
 export const useModal = () => {
+  ReactModal.setAppElement("body")
   const [showModal, setShowModal] = useState(false)
 
   const toggleModal = useCallback(() => {

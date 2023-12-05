@@ -2,6 +2,7 @@ import { useCallback, useState } from "react"
 import LogoAsset from "../public/thumbnail-preview.svg"
 import "./App.css"
 import { useModal } from "./hooks/useModal"
+import { useCopyToClipboard } from "usehooks-ts"
 
 const THUMBNAIL_IMAGE_TYPES = [
   "maxresdefault",
@@ -19,7 +20,9 @@ const thumnailImages = {
 }
 
 const App = () => {
+  const [copiedValue, copy] = useCopyToClipboard()
   const [videoId, setVideoId] = useState<string | null>(null)
+  const [isValueCopied, setIsValueCopied] = useState(false)
 
   const { renderModal, toggleModal } = useModal()
 
@@ -46,6 +49,15 @@ const App = () => {
     }
   }
 
+  const onCopy = (videoId: string) => {
+    copy(`https://www.youtube.com/embed/${videoId}`)
+    setIsValueCopied(true)
+
+    setTimeout(() => {
+      setIsValueCopied(false)
+    }, 1500)
+  }
+
   return (
     <>
       <h1>
@@ -68,11 +80,40 @@ const App = () => {
         <>
           <p>
             <span style={{ fontWeight: "bold" }}>Youtube Video ID:</span>
+            &nbsp;&nbsp;
             {videoId}
           </p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>Youtube Video Embed URL:</span>
+            &nbsp;&nbsp;
+            {`https://www.youtube.com/embed/${videoId}`}
+          </p>
 
-          <button onClick={toggleModal}>Videoを再生する</button>
+          <div className="buttonWrapper">
+            <button onClick={toggleModal}>Videoを再生する</button>
+            <button onClick={() => onCopy(videoId)}>
+              Video URLをコピーする
+            </button>
+          </div>
+          {copiedValue && isValueCopied && (
+            <p className="copyValue">
+              Youtube URLをコピーしました
+              <br />
+              {copiedValue}
+            </p>
+          )}
 
+          <section>
+            <h2>動画が再生されない場合:</h2>
+            <ul className="noticeList">
+              <li>
+                <small>
+                  ※
+                  入力されたYoutube動画URLまたはYoutube動画IDに誤りがあります、再度ご確認ください
+                </small>
+              </li>
+            </ul>
+          </section>
           <section>
             <h2>画像が表示されない場合:</h2>
             <ul className="noticeList">
