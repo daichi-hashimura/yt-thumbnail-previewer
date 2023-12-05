@@ -90,10 +90,8 @@ const App = () => {
           </p>
 
           <div className="buttonWrapper">
-            <button onClick={toggleModal}>Videoを再生する</button>
-            <button onClick={() => onCopy(videoId)}>
-              Video URLをコピーする
-            </button>
+            <button onClick={toggleModal}>動画を再生する</button>
+            <button onClick={() => onCopy(videoId)}>動画URLをコピーする</button>
           </div>
           {copiedValue && isValueCopied && (
             <p className="copyValue">
