@@ -101,14 +101,11 @@ input {
   background-color: #eee;
 }
 
-:fullscreen img {
-  width: 80% !important;
-}
-
 .buttonWrapper {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-direction: column;
 }
 .buttonWrapper button {
   border: 1px solid #eee;
@@ -125,7 +122,7 @@ input {
 }
 
 .copyValue {
-  width: calc(100% - 60px);
+  width: calc(100% - 62px);
   margin: 10px auto 0;
   padding: 10px 30px;
   border: 1px solid #ba121f;
@@ -137,6 +134,10 @@ input {
 @media screen and (min-width: 960px) {
   .copyValue {
     width: 30%;
+  }
+
+  .buttonWrapper {
+    flex-direction: row;
   }
 }
 
