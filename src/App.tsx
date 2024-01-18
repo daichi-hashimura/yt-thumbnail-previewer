@@ -122,6 +122,14 @@ const App = () => {
               </li>
               <li>
                 <small>
+                  ※ 入力されたYoutube動画URLにquery parameterが含まれている
+                  <br />
+                  ie: https://www.youtube.com/embed/{videoId}
+                  ?[si=0VWdmEfl1TbbSSn7] → こういったparamater
+                </small>
+              </li>
+              <li>
+                <small>
                   ※
                   解像度の低い画像がYoutubeにアップロードされている可能性がありますため、Youtubeを確認し、解像度の高いサムネイル画像を再度アップロードしてください
                 </small>
